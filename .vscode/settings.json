@@ -1,0 +1,9 @@
+{
+	"editor.formatOnSave": true,
+	"files.associations": {
+		".lua-format": "yaml"
+	},
+	"[lua]": {
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+	}
+}
