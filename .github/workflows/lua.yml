@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     uses: FPtje/GLuaFixer/.github/workflows/glualint.yml@master
-        with:
-          config: .glualint.json
+    with:
+      config: .glualint.json
 
     steps:
       - uses: actions/checkout@v3
