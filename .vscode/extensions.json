@@ -2,6 +2,7 @@
 	"recommendations": [
 		"sumneko.lua",
 		"EditorConfig.EditorConfig",
-		"JohnnyMorganz.stylua"
+		"JohnnyMorganz.stylua",
+		"goz3rr.vscode-glualint"
 	]
 }
