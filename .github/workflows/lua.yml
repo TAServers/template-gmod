@@ -5,8 +5,10 @@ on:
   pull_request:
 
 jobs:
-  format:
+  lint:
     runs-on: ubuntu-latest
+    env:
+      GLUAFIXER_VERSION: 1.23.0
 
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +19,10 @@ jobs:
           version: latest
           args: --check lua/
 
-  lint:
-    uses: FPtje/GLuaFixer/.github/workflows/glualint.yml@master
-    with:
-      config: .glualint.json
+      - name: Download GLuaFixer
+        run: |
+          curl --retry 3 --location https://github.com/FPtje/GLuaFixer/releases/download/$GLUAFIXER_VERSION/glualint-$GLUAFIXER_VERSION-x86_64-linux.zip --output gluafixer.zip
+          unzip gluafixer.zip
+
+      - name: Run GLuaFixer
+        run: ./gluafixer --output-format github --config .glualint.json lint lua
