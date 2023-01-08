@@ -36,4 +36,4 @@ jobs:
     concurrency: production
 
     steps:
-      - run: echo Deploying
+      - run: curl -X POST ${{ secrets.DEPLOYER_WEBHOOK }}/${{ github.event.repository.name }}
