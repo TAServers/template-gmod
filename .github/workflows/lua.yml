@@ -26,3 +26,11 @@ jobs:
 
       - name: Run GLuaFixer
         run: ./glualint --output-format github --config .glualint.json lint lua
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [lint]
+    if: ${{ format('refs/heads/{0}', ) == github.ref }}
+
+    steps:
+      - run: echo Deploying
