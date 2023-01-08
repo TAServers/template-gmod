@@ -7,6 +7,11 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
+    uses: FPtje/GLuaFixer/.github/workflows/glualint.yml@master
+        with:
+          config: .glualint.json
+
     steps:
       - uses: actions/checkout@v3
 
@@ -15,7 +20,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
           args: --check lua/
-
-      - uses: FPtje/GLuaFixer/.github/workflows/glualint.yml@master
-        with:
-          config: .glualint.json
