@@ -1,1 +1,2 @@
-local test = "this passes the style requirements, but fails the linter"
+local test = "this passes the style requirements"
+print(test)
