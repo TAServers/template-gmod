@@ -15,3 +15,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
           args: --check lua/
+
+      - uses: FPtje/GLuaFixer/.github/workflows/glualint.yml@master
+        with:
+          config: .glualint.json

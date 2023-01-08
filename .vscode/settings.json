@@ -4,6 +4,7 @@
 		".lua-format": "yaml"
 	},
 	"[lua]": {
-		"editor.defaultFormatter": "JohnnyMorganz.stylua"
-	}
+		"editor.defaultFormatter": "JohnnyMorganz.stylua",
+	},
+	"Lua.diagnostics.enable": false
 }
