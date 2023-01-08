@@ -2,7 +2,21 @@ name: Lua CI
 
 on:
   push:
+    paths:
+      - "**.json"
+      - "**.yml"
+      - "**.toml"
+      - "**.lua"
+      - ".gitattributes"
+      - ".editorconfig"
   pull_request:
+    paths:
+      - "**.json"
+      - "**.yml"
+      - "**.toml"
+      - "**.lua"
+      - ".gitattributes"
+      - ".editorconfig"
 
 jobs:
   lint:
