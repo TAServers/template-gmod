@@ -1,22 +1,6 @@
 name: Lua CI
 
-on:
-  push:
-    paths:
-      - "**.json"
-      - "**.yml"
-      - "**.toml"
-      - "**.lua"
-      - ".gitattributes"
-      - ".editorconfig"
-  pull_request:
-    paths:
-      - "**.json"
-      - "**.yml"
-      - "**.toml"
-      - "**.lua"
-      - ".gitattributes"
-      - ".editorconfig"
+on: [push, pull_request]
 
 jobs:
   lint:
@@ -51,4 +35,4 @@ jobs:
 
     steps:
       - name: Post to webhook
-        run: curl -X POST ${{ secrets.DEPLOYER_WEBHOOK }}/${{ github.event.repository.name }}
+        run: curl --fail-with-body -X POST ${{ secrets.DEPLOYER_WEBHOOK }}/${{ github.event.repository.name }}
